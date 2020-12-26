@@ -16,7 +16,7 @@ class MyGame extends Phaser.Scene
         this.load.image('cracker', crackerImg);
         //this.load.audio('pow', ['https://raw.githubusercontent.com/photonstorm/phaser-examples/master/examples/assets/audio/SoundEffects/explosion.mp3']);
         //this.load.audio('pow', ['https://raw.githubusercontent.com/photonstorm/phaser-examples/master/examples/assets/audio/SoundEffects/explode1.wav']);
-        this.load.audio('pow', [powMp3]);
+        this.load.audio('pow', [powMp3, 'https://raw.githubusercontent.com/photonstorm/phaser-examples/master/examples/assets/audio/SoundEffects/explode1.wav', 'https://raw.githubusercontent.com/photonstorm/phaser-examples/master/examples/assets/audio/SoundEffects/fx_mixdown.ogg']);
     }
       
     create ()
