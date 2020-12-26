@@ -1,0 +1,1 @@
+https://raw.githubusercontent.com/photonstorm/phaser-examples/master/examples/assets/audio/SoundEffects/explosion.mp3
