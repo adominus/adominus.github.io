@@ -64,18 +64,29 @@ class MyGame extends Phaser.Scene
 
 	const pow = this.sound.add('pow');
 
+	this.jokes = [
+	    'Who\'s Lillith\'s favourite Harry Potter character??\n\nSeverus Snake',
+	    'Knock Knock\nWho\'s there?\nNagini\nOh, Slytherin',
+	    'Who\'s Nibbler\'s favourite Slade member?\n\nBunny Holder',
+	    'Who\'s Archimedes\'s favourite Wham member?\n\nGeorge Meowchael',
+	    'What is the Scottish first minister\'s favourite Madonna song?\n\nLike a Sturgeon',
+	    'How do weavers communicate during lockdown?\n\nVia Loom',
+	    'How does a school of finish communicate during lockdown?\n\nVia Microsoft Breems',
+	    'How does Josh communicate with his family during lockdown? \n\nVia Broome',
+	];
+
 	this.state = 1;
 
 	this.input.on('pointerup', function () {
 		if (this.state == 1) {
 		    if (explode1.isPaused) {
-			    this.crackerPopped();
+			    this.addBang();
 			    explode1.play();
 			    explode2.play();
 			    pow.play();
 		    }
 		} else if (this.state == 2) {
-			let text = this.add.text(100, centreY - 100, 'How do weavers communicate during lockdown?\n\nVia Loom', 
+			let text = this.add.text(100, centreY - 100, this.jokes[jokes_counter++ % this.jokes.length],
 				{ font: '50px Arial', fill: 'white', wordWrap: { width: gameWidth - 200 }, align: 'center' , stroke: 'black', strokeThickness: 8});
 
 			this.state = 3
@@ -89,7 +100,7 @@ class MyGame extends Phaser.Scene
 
     update () { }
 
-    crackerPopped(tween, targets) {
+    addBang() {
 	    const gameHeight = game.config.height;
 	    const gameWidth = game.config.width;
 	    const centreX = gameWidth / 2;
@@ -98,10 +109,14 @@ class MyGame extends Phaser.Scene
 	    const bang = this.add.image(
 			    centreX, 
 			    centreY, 'bang');
-    
+    }
+
+    crackerPopped(tween, targets) {
 	    this.state = 2;
     }
 }
+
+let jokes_counter = 0;
 
 const config = {
     type: Phaser.AUTO,
