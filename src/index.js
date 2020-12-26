@@ -22,7 +22,7 @@ class MyGame extends Phaser.Scene
       
     create ()
     {
-	const gameHeight = game.config.height;
+	/*const gameHeight = game.config.height;
 	const gameWidth = game.config.width;
 	const centreX = gameWidth / 2;
 	const centreY = gameHeight / 2;
@@ -54,6 +54,7 @@ class MyGame extends Phaser.Scene
 			onComplete: this.crackerPopped,
 			onCompleteScope: this
 		});
+		//*/
 
 	const pow = this.sound.add('pow');
 
@@ -61,21 +62,21 @@ class MyGame extends Phaser.Scene
 	let scene = this;
 
 	this.input.on('pointerup', function () {
-		if (this.state == 1) {
-			if (explode1.isPaused) {
-				explode1.play();
-				explode2.play();
+		//if (this.state == 1) {
+			//if (explode1.isPaused) {
+				//explode1.play();
+				//explode2.play();
 				pow.play();
-			}
-		} else if (this.state == 2) {
-			this.add.text(100, centreY - 100, 'lorem ipsum dolar sit amet lorem ipsum dolar sit amet lorem ipsum dolar sit amet lorem ipsum dolar sit amet', 
-				{ font: '50px Arial', fill: 'white', wordWrap: { width: gameWidth - 200 }, align: 'center' });
-
-			this.state = 3
-		} else if (this.state == 3) {
-			console.log('restart');
-			this.scene.restart();
-		}
+			//}
+		//} else if (this.state == 2) {
+			//this.add.text(100, centreY - 100, 'lorem ipsum dolar sit amet lorem ipsum dolar sit amet lorem ipsum dolar sit amet lorem ipsum dolar sit amet', 
+				//{ font: '50px Arial', fill: 'white', wordWrap: { width: gameWidth - 200 }, align: 'center' });
+//
+			//this.state = 3
+		//} else if (this.state == 3) {
+			//console.log('restart');
+			//this.scene.restart();
+		//}
 	}, this);
 
     }
